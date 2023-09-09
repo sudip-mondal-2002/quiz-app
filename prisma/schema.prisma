@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  name         String
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  quizzes      Quiz[]
+}
+
+enum Option {
+  A
+  B
+  C
+  D
+}
+
+type Attempt {
+  question String
+  optionA  String
+  optionB  String
+  optionC  String
+  optionD  String
+  answer   Option
+  selected Option?
+}
+
+model Quiz {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String    @db.ObjectId
+  user      User      @relation(fields: [userId], references: [id])
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  questions Attempt[]
+  topic     String
+  score     Int?
+}
