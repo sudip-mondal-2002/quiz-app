@@ -23,7 +23,6 @@ const generateQuestions = async (topicString: string) => {
             }
         ]
     });
-    console.log(response.choices[0].message.content)
     return response.choices[0].message.content
 }
 export default async function Page({params}: { params: { topic: string } }) {

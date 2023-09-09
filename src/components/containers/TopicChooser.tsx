@@ -21,6 +21,24 @@ export const TopicChooser = () => {
             <MenuItem value={"Geography"}>Geography</MenuItem>
             <MenuItem value={"History"}>History</MenuItem>
             <MenuItem value={"Programming"}>Programming</MenuItem>
+            <MenuItem value={"Mathematics"}>Mathematics</MenuItem>
+            <MenuItem value={"Science"}>Science</MenuItem>
+            <MenuItem value={"Art"}>Art</MenuItem>
+            <MenuItem value={"Physics"}>Physics</MenuItem>
+            <MenuItem value={"Chemistry"}>Chemistry</MenuItem>
+            <MenuItem value={"Biology"}>Biology</MenuItem>
+            <MenuItem value={"English"}>English</MenuItem>
+            <MenuItem value={"Physical Education"}>Physical Education</MenuItem>
+            <MenuItem value={"Economics"}>Economics</MenuItem>
+            <MenuItem value={"Political Science"}>Political Science</MenuItem>
+            <MenuItem value={"Psychology"}>Psychology</MenuItem>
+            <MenuItem value={"Sociology"}>Sociology</MenuItem>
+            <MenuItem value={"Business Studies"}>Business Studies</MenuItem>
+            <MenuItem value={"Neuroscience"}>Neuroscience</MenuItem>
+            <MenuItem value={"Music"}>Music</MenuItem>
+            <MenuItem value={"Environmental Science"}>Environmental Science</MenuItem>
+
+
         </Select>
         <Button disabled={!topic} sx={{
             width: '40%',
